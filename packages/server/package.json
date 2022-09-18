@@ -1,7 +1,6 @@
 {
-  "name": "server",
+  "name": "@woovi/server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "koa": "^2.13.4"
@@ -10,9 +9,8 @@
     "@types/node": "^18.7.18"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc -b"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC"
 }

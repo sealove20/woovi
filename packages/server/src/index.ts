@@ -1,8 +1,14 @@
-import * as Koa from 'koa'
-const app = new Koa()
+import app from './app';
+import { connectDatabase } from './database';
 
-app.use(async ctx => {
-  ctx.body = 'Hello World'
-})
+const PORT = process.env.PORT || 4000;
 
-app.listen(3000)
+app
+  .listen(PORT, async () => {
+    await connectDatabase();
+
+    console.log(`Running on port ${PORT}`);
+  })
+  .on('error', (err) => {
+    console.log(err);
+  });
